@@ -10,13 +10,13 @@ install:
 		n3wborn/vite-docker:latest \
 		yarn install
 
-.PHONY: update
-update:
+.PHONY: upgrade
+upgrade:
 	docker run --rm --name node -u "node" \
 		-w /home/node/app \
 		-v $(CURDIR)/app:/home/node/app \
 		n3wborn/vite-docker:latest \
-		yarn update
+		yarn upgrade
 
 .PHONY: dev
 dev:
@@ -34,4 +34,3 @@ build:
 		-v $(CURDIR)/app:/home/node/app \
 		n3wborn/vite-docker:latest \
 		yarn build
-
