@@ -34,4 +34,3 @@ build:
 		-v $(CURDIR)/app:/home/node/app \
 		n3wborn/vite-docker:latest \
 		yarn build
-
