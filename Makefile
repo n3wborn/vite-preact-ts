@@ -4,7 +4,7 @@ docker_build:
 
 .PHONY: install
 install:
-	docker run --rm --name node -u "node" \
+	docker run --rm --name vite-preact -u "node" \
 		-w /home/node/app \
 		-v $(CURDIR)/app:/home/node/app \
 		n3wborn/vite-docker:latest \
@@ -12,7 +12,7 @@ install:
 
 .PHONY: upgrade
 upgrade:
-	docker run --rm --name node -u "node" \
+	docker run --rm -u "node" \
 		-w /home/node/app \
 		-v $(CURDIR)/app:/home/node/app \
 		n3wborn/vite-docker:latest \
@@ -20,7 +20,7 @@ upgrade:
 
 .PHONY: dev
 dev:
-	docker run --rm -it --name node -u "node" \
+	docker run --rm -it --name vite-preact -u "node" \
 		-w /home/node/app \
 		-v $(CURDIR)/app:/home/node/app \
 		-p 3000:3000 \
@@ -29,7 +29,7 @@ dev:
 
 .PHONY: build
 build:
-	cd app && docker run --rm -it --name node -u "node" \
+	cd app && docker run --rm -it --name vite-preact -u "node" \
 		-w /home/node/app \
 		-v $(CURDIR)/app:/home/node/app \
 		n3wborn/vite-docker:latest \
